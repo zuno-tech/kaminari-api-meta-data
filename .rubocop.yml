@@ -1,5 +1,5 @@
 inherit_gem:
-  boxt_rubocop:
+  rubocop-zuno:
     - rspec.yml
 
 inherit_mode:
@@ -7,7 +7,7 @@ inherit_mode:
     - Exclude
 
 require:
-  - boxt_rubocop
+  - rubocop-zuno
 
 plugins:
   - rubocop-rake
