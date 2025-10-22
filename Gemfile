@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "activerecord", "~> 8.0"
+gem "activerecord", "~> 8.1"
 gem "appraisal", "~> 2.5"
 gem "rake", "~> 13.3"
 gem "rspec", "~> 3.13"
