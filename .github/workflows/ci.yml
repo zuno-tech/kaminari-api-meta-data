@@ -28,10 +28,12 @@ jobs:
             { version: "3.3", gemfile: activerecord_7_1 },
             { version: "3.3", gemfile: activerecord_7_2 },
             { version: "3.3", gemfile: activerecord_8 },
+            { version: "3.3", gemfile: activerecord_8_1 },
             { version: "3.3", gemfile: activerecord_main },
             { version: "3.4", gemfile: activerecord_7_1 },
             { version: "3.4", gemfile: activerecord_7_2 },
             { version: "3.4", gemfile: activerecord_8 },
+            { version: "3.4", gemfile: activerecord_8_1 },
             { version: "3.4", gemfile: activerecord_main },
           ]
     env:

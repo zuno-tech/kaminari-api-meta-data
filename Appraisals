@@ -27,6 +27,11 @@ appraise "activerecord-8" do
   gem "sqlite3", "~> 2.0"
 end
 
+appraise "activerecord-8-1" do
+  gem "activerecord", "~> 8.1.0"
+  gem "sqlite3", "~> 2.0"
+end
+
 appraise "activerecord-main" do
   gem "activerecord", github: "rails/rails", branch: "main"
   gem "sqlite3", "~> 2.0"
