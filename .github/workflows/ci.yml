@@ -34,6 +34,9 @@ jobs:
             { version: "3.4", gemfile: activerecord_8 },
             { version: "3.4", gemfile: activerecord_8_1 },
             { version: "3.4", gemfile: activerecord_main },
+            { version: "4.0", gemfile: activerecord_8 },
+            { version: "4.0", gemfile: activerecord_8_1 },
+            { version: "4.0", gemfile: activerecord_main },
           ]
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.ruby.gemfile }}.gemfile
