@@ -67,11 +67,15 @@ GEM
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
-    loofah (2.24.1)
+    loofah (2.25.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
+    mini_portile2 (2.8.9)
     minitest (6.0.1)
       prism (~> 1.5)
+    nokogiri (1.18.10)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.18.10-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.10-x86_64-darwin)
@@ -190,4 +194,4 @@ DEPENDENCIES
   simplecov (~> 0.22)
 
 BUNDLED WITH
-  4.0.2
+  4.0.3
