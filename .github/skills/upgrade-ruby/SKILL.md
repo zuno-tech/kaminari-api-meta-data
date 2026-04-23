@@ -1,7 +1,6 @@
----
 name: upgrade-ruby
 description: 'Update Ruby version in the kaminari-api-meta-data gem repo. Run after /upgrade-ruby-setup has checked out main and created the upgrade branch. Updates .ruby-version and the GitHub Actions CI matrix.'
-argument-hint: '<old-version> <new-version> (e.g. 4.0.2 4.1.0)'
+argument-hint: '<new-version> (e.g. 4.1.0)'
 ---
 
 # Upgrade Ruby — kaminari-api-meta-data
@@ -10,14 +9,19 @@ argument-hint: '<old-version> <new-version> (e.g. 4.0.2 4.1.0)'
 Run `/upgrade-ruby-setup` first to install Ruby via rbenv and create the upgrade branch.
 
 ## Required Inputs
-- **Old version** (e.g. `4.0.2`)
 - **New version** (e.g. `4.1.0`)
 
 ---
 
 ## Procedure
 
-### 1. Update `.ruby-version`
+### 1. Read the current version and update `.ruby-version`
+
+Before making changes, capture the current version from `.ruby-version`:
+
+```bash
+CURRENT_VERSION=$(cat .ruby-version)
+```
 
 File: `.ruby-version` — set to `<new-version>` (bare version string only).
 
@@ -51,7 +55,7 @@ The `gemfiles/*.lock` files will have the bundler version pinned to an old versi
 
 ```bash
 BUNDLER_VERSION=$(grep -A1 'BUNDLED WITH' Gemfile.lock | tail -1 | xargs)
-find gemfiles -name "*.lock" -exec sed -i '' '/BUNDLED WITH/,+1s/[0-9.]*/"$BUNDLER_VERSION"/' {} \;
+find gemfiles -name "*.lock" -exec sed -i '' "/BUNDLED WITH/,+1s/[0-9.]*/${BUNDLER_VERSION}/" {} \;
 ```
 
 ### 6. Regenerate Appraisals gemfiles
@@ -67,7 +71,7 @@ This updates the auto-generated files in `gemfiles/`. Commit these alongside the
 ### 7. Verify
 
 ```bash
-grep -r "<old-version>" \
+grep -r "$CURRENT_VERSION" \
   --include="*.yml" --include=".ruby-version" \
   .
 ```
