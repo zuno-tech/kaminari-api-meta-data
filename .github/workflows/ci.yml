@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: ruby/setup-ruby@afeafc3d1ab54a631816aba4c914a0081c12ff2f
+      - uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9
         with:
           bundler-cache: true
       - run: bundle exec rubocop
@@ -42,7 +42,7 @@ jobs:
       BUNDLE_PATH_RELATIVE_TO_CWD: true
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: ruby/setup-ruby@afeafc3d1ab54a631816aba4c914a0081c12ff2f
+      - uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9
         with:
           bundler-cache: true
           ruby-version: ${{ matrix.ruby.version }}
