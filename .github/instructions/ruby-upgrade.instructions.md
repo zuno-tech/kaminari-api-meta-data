@@ -37,15 +37,16 @@ Update the SHA in `.github/workflows/ci.yml`:
 
 ```bash
 LATEST=$(curl -s "https://api.github.com/repos/ruby/setup-ruby/commits/master" | python3 -c "import sys,json; print(json.load(sys.stdin)['sha'])")
-sed -i '' "s#ruby/setup-ruby@[a-f0-9]*#ruby/setup-ruby@${LATEST}#g" .github/workflows/ci.yml
+sed -i.bak "s#ruby/setup-ruby@[a-f0-9]*#ruby/setup-ruby@${LATEST}#g" .github/workflows/ci.yml
+rm .github/workflows/ci.yml.bak
 ```
 
 ### 4. Regenerate Appraisals
 
-Run `appraisal update` to regenerate the test matrix gemfiles:
+Run `bundle exec appraisal install` to regenerate the test matrix gemfiles:
 
 ```bash
-appraisal update
+bundle exec appraisal install
 ```
 
 Verify that `.github/workflows/ci.yml` includes the new Ruby version in its test matrix.
