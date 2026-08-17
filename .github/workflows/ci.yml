@@ -9,7 +9,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
       - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
         with:
           bundler-cache: true
@@ -38,7 +38,7 @@ jobs:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.ruby.gemfile }}.gemfile
       BUNDLE_PATH_RELATIVE_TO_CWD: true
     steps:
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
       - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
         with:
           bundler-cache: true
