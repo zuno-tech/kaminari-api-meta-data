@@ -162,7 +162,7 @@ GEM
       rubocop-rspec_rails (= 2.32.0)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    simplecov (1.0.2)
+    simplecov (1.1.1)
     thor (1.5.0)
     timeout (0.6.1)
     tzinfo (2.0.6)
@@ -184,7 +184,7 @@ DEPENDENCIES
   rake (~> 13.4)
   rspec (~> 3.13)
   rubocop-zuno (= 4.4.1)
-  simplecov (~> 1.0)
+  simplecov (~> 1.1)
 
 BUNDLED WITH
   4.0.16
