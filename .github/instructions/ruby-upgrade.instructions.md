@@ -52,6 +52,14 @@ Bundler also adds your local platform (e.g. `arm64-darwin-27`) to the lockfiles.
 
 Do not run `bundle exec appraisal install` for a Ruby upgrade. It regenerates `gemfiles/*.gemfile` from the current `Gemfile` and `Appraisals`, which pulls in unrelated dependency changes and can fail to resolve or build older ActiveRecord appraisals. Run it only when `Gemfile` or `Appraisals` change.
 
+### 5. Verify
+
+Search tracked files for the old version (escape the dots, e.g. `4\.0\.7`). It must return nothing:
+
+```bash
+git grep -nE 'ruby[ "/:-]*X\.Y\.Z|RUBY_VERSION=X\.Y\.Z|^X\.Y\.Z$|Ruby:? X\.Y\.Z'
+```
+
 ## Testing
 
 ```bash
