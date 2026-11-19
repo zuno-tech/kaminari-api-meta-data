@@ -195,6 +195,8 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
+    sqlite3 (2.9.5)
+      mini_portile2 (~> 2.8.0)
     sqlite3 (2.9.5-aarch64-linux-gnu)
     sqlite3 (2.9.5-aarch64-linux-musl)
     sqlite3 (2.9.5-arm-linux-gnu)
@@ -238,4 +240,4 @@ DEPENDENCIES
   sqlite3 (~> 2.9)
 
 BUNDLED WITH
-  4.0.23
+  4.1.0
